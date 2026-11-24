@@ -14,12 +14,19 @@ const weddingData = {
   // Leave googleMaps empty ("") to use a venue-name search; paste the exact
   // Google Maps share link here once available.
   googleMaps: "",
+  receptionVenue: "Holiday Home",
+  receptionAddress: "Kumily",
+  receptionGoogleMaps: "https://maps.app.goo.gl/pQZdMSzhwiw2Scmh7",
   music: "music.mp3"
 };
 
 const mapsUrl = weddingData.googleMaps ||
   "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(weddingData.venue + ", " + weddingData.address);
 const mapsEmbed = "https://www.google.com/maps?q=" + encodeURIComponent(weddingData.venue + ", " + weddingData.address) + "&output=embed";
+
+const receptionMapsUrl = weddingData.receptionGoogleMaps ||
+  "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(weddingData.receptionVenue + ", " + weddingData.receptionAddress);
+const receptionMapsEmbed = "https://www.google.com/maps?q=" + encodeURIComponent(weddingData.receptionVenue + ", " + weddingData.receptionAddress) + "&output=embed";
 
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -40,6 +47,13 @@ function initMaps() {
   });
   const frame = document.getElementById("venueMapEmbed");
   if (frame) frame.src = mapsEmbed;
+
+  const recMapsBtn = document.getElementById("receptionMapsBtn");
+  if (recMapsBtn) recMapsBtn.href = receptionMapsUrl;
+  const recDirBtn = document.getElementById("receptionDirectionsBtn");
+  if (recDirBtn) recDirBtn.href = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(weddingData.receptionVenue + ", " + weddingData.receptionAddress);
+  const recFrame = document.getElementById("receptionVenueMapEmbed");
+  if (recFrame) recFrame.src = receptionMapsEmbed;
 }
 
 /* ---------------------------------- Preloader ---------------------------------- */

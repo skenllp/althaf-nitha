@@ -549,6 +549,7 @@ section { position: relative; padding: 100px 24px; overflow: hidden; }
 
 /* ---------------------------------- Venue ---------------------------------- */
 .venue-section { background: var(--black-primary); }
+.venue-section--reception { background: var(--black-section); border-top: 1px solid var(--border-gold); }
 .venue-card {
   max-width: 900px; margin: 0 auto;
   background: rgba(20,20,20,.75);
