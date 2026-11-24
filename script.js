@@ -6,7 +6,7 @@
 const weddingData = {
   nikkah: {
     date: "2026-12-26",  // YYYY-MM-DD
-    time: "00:00",        // 24hr, IST (UTC+05:30) — 12:00 AM
+    time: "12:00",        // 24hr, IST (UTC+05:30) — 12:00 PM
     label: "Nikkah"
   },
   venue: "Las Ciglal Convention Centre",
